@@ -5,7 +5,7 @@ Basic Spring Boot server to be used with the 'reactathon' training/hackathon.
 
 `java -jar hackathon-api-rest-0.1.0.jar`
 
-Once the server is up and running it can be accessed on port **8080**
+Once the server is up and running it can be accessed on port **8080**.
 
 
 ## Building and Running the API with Maven
