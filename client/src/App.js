@@ -12,16 +12,17 @@ import Header from './components/Header/Header'
 import About from './components/About/About'
 import SignIn from './components/SignIn/SignIn'
 import Register from './components/Register/Register'
-import Profile from './components/Profile/Profile'
+import EditEvent from './components/EditEvent/EditEvent'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import AccountInformation from './components/AccountInformation/AccountInformation'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
+import AddMusician from './components/AddMusician/AddMusician'
 import CreateEventModal from './components/CreateEventModal/CreateEventModal'
+import AddSongModal from './components/AddSongModal/AddSongModal'
 
 import {Provider} from 'react-redux'
 import createStore from './store/createStore'
 import {MuiThemeProvider, createMuiTheme} from 'material-ui/styles'
-
 import blue from 'material-ui/colors/blue'
 
 import './App.css'
@@ -46,11 +47,13 @@ class App extends Component {
                                 <Header/>
                             </header>
                             <Switch>
+                                <Route path="/add-song" component={AddSongModal}/>
                                 <Route path="/create-event" component={CreateEventModal}/>
                                 <Route path="/about" component={About}/>
                                 <Route path="/signin" component={SignIn}/>
                                 <Route path="/register" component={Register}/>
-                                <Route path="/profile/:id" component={Profile}/>
+                                <Route path="/event/:id" component={EditEvent}/>
+                                <Route path="/add-musician" component={AddMusician}/>
                                 <Route path="/" exact component={Landing}/>
                                 <AuthenticatedRoute path="/account-information" component={AccountInformation}/>
                                 <Route component={PageNotFound}/>
