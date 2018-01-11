@@ -16,6 +16,7 @@ import EditEvent from './components/EditEvent/EditEvent'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import AccountInformation from './components/AccountInformation/AccountInformation'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
+import AddMusician from './components/AddMusician/AddMusician'
 import CreateEventModal from './components/CreateEventModal/CreateEventModal'
 
 import {Provider} from 'react-redux'
@@ -50,6 +51,7 @@ class App extends Component {
                                 <Route path="/signin" component={SignIn}/>
                                 <Route path="/register" component={Register}/>
                                 <Route path="/event/:id" component={EditEvent}/>
+                                <Route path="/add-musician" component={AddMusician}/>
                                 <Route path="/" exact component={Landing}/>
                                 <AuthenticatedRoute path="/account-information" component={AccountInformation}/>
                                 <Route component={PageNotFound}/>

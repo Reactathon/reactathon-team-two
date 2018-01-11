@@ -8,6 +8,7 @@ import {loadProfile} from '../../actions/profileActions'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import ReactTable from "react-table";
 import { makeData } from "./Helper";
+import AddMusician from '../AddMusician/AddMusician'
 
 class EditEvent extends Component {
 
@@ -93,7 +94,7 @@ class EditEvent extends Component {
                         </ul>
                     </TabPanel>
                     <TabPanel>
-                        <h2>Musician editing goes here</h2>
+                        <AddMusician/>
                     </TabPanel>
                 </Tabs>)
     }
