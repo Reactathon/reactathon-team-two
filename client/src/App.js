@@ -18,6 +18,7 @@ import AccountInformation from './components/AccountInformation/AccountInformati
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AddMusician from './components/AddMusician/AddMusician'
 import CreateEventModal from './components/CreateEventModal/CreateEventModal'
+import AddSongModal from './components/AddSongModal/AddSongModal'
 
 import {Provider} from 'react-redux'
 import createStore from './store/createStore'
@@ -46,6 +47,7 @@ class App extends Component {
                                 <Header/>
                             </header>
                             <Switch>
+                                <Route path="/add-song" component={AddSongModal}/>
                                 <Route path="/create-event" component={CreateEventModal}/>
                                 <Route path="/about" component={About}/>
                                 <Route path="/signin" component={SignIn}/>
