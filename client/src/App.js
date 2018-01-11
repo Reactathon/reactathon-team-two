@@ -16,6 +16,7 @@ import Profile from './components/Profile/Profile'
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import AccountInformation from './components/AccountInformation/AccountInformation'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
+import CreateEventModal from './components/CreateEventModal/CreateEventModal'
 
 import {Provider} from 'react-redux'
 import createStore from './store/createStore'
@@ -45,6 +46,7 @@ class App extends Component {
                                 <Header/>
                             </header>
                             <Switch>
+                                <Route path="/create-event" component={CreateEventModal}/>
                                 <Route path="/about" component={About}/>
                                 <Route path="/signin" component={SignIn}/>
                                 <Route path="/register" component={Register}/>
