@@ -8,26 +8,18 @@ const range = len => {
     return arr;
 };
 
-const newPerson = () => {
-    const statusChance = Math.random();
+const newScheduleItem = () => {
+    const statusChance = Math.random() * 3;
     return {
-        firstName: "Dan",
-        lastName: "C",
-        age: Math.floor(Math.random() * 30),
-        visits: Math.floor(Math.random() * 100),
-        progress: Math.floor(Math.random() * 100),
-        status:
-            statusChance > 0.66
-                ? "relationship"
-                : statusChance > 0.33 ? "complicated" : "single"
+        Sunday: '12pm - 3pm'
     };
 };
 
-export function makeData(len = 5553) {
+export function makeData(len = 50) {
     return range(len).map(d => {
         return {
-            ...newPerson(),
-            children: range(10).map(newPerson)
+            ...newScheduleItem(),
+            children: range(10).map(newScheduleItem)
         };
     });
 }

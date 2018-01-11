@@ -34,43 +34,45 @@ class EditEvent extends Component {
                         <Tab>Musician</Tab>
                     </TabList>
                     <TabPanel>
-                        <h2>Schedule for Event {this.props.match.params.id}</h2>
+                        <h2>Suggested Practice Schedule</h2>
+                        <div>Magic goes here</div>
+                    </TabPanel>
+                    <TabPanel>
+                        <h2>Song List</h2>
+                        <ul>
+                            <li>Song 1</li>
+                            <li>Song 2</li>
+                        </ul>
+                        <button>Add</button>
+                        <h2>Schedule for Drew's Place</h2>
                         <div>
                             <ReactTable
                                 data={data}
                                 columns={[
                                     {
-                                        Header: "Name",
                                         columns: [
                                             {
-                                                Header: "First Name",
-                                                accessor: "firstName"
+                                                Header: "Date"
                                             },
                                             {
-                                                Header: "Last Name",
+                                                Header: "Sunday",
+                                                accessor: "Sunday"
+                                            },
+                                            {
+                                                Header: "Monday",
                                                 id: "lastName",
                                                 accessor: d => d.lastName
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        Header: "Info",
-                                        columns: [
+                                            },
                                             {
-                                                Header: "Age",
+                                                Header: "Tuesday",
                                                 accessor: "age"
                                             },
                                             {
-                                                Header: "Status",
+                                                Header: "Wednesday",
                                                 accessor: "status"
-                                            }
-                                        ]
-                                    },
-                                    {
-                                        Header: 'Stats',
-                                        columns: [
+                                            },
                                             {
-                                                Header: "Visits",
+                                                Header: "Thursday",
                                                 accessor: "visits"
                                             }
                                         ]
@@ -80,18 +82,7 @@ class EditEvent extends Component {
                                 className="-striped -highlight"
                             />
                         </div>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Location + Schedule List</h2>
-                        <ul>
-                            <li>Location 1 Schedule</li>
-                            <li>Location 2 Schedule</li>
-                        </ul>
-                        <h2>Song List</h2>
-                        <ul>
-                            <li>Song 1</li>
-                            <li>Song 2</li>
-                        </ul>
+
                     </TabPanel>
                     <TabPanel>
                         <AddMusician/>
