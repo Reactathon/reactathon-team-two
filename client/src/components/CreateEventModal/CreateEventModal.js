@@ -33,7 +33,7 @@ class CreateEventModal extends Component {
 
     handleSubmit = () => {
         const {name, date, location} = this.state
-        this.props.event({name, date, location})
+        this.props.addEvent({name, date, location})
         this.setState({ 
             name: '',
             date: '',
@@ -77,7 +77,7 @@ class CreateEventModal extends Component {
 
 const mapDispatchToProps = dispatch => {
     return {
-        event: (event) => dispatch(createEvent(event))
+        addEvent: (event) => dispatch(createEvent(event))
     }
 }
 
