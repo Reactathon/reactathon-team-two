@@ -82,6 +82,10 @@ class AddMusician extends Component {
         return (
             <div>
                 <div>
+                    <h1>Info</h1>
+                    <span>Name: </span><input type='input'/>
+                </div>
+                <div>
                     <h1>Schedule</h1>
                     <span>Set your availability for the practices</span>
                 </div>
