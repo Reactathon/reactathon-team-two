@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
+import './AddMusician.css'
+
 class AddMusician extends Component {
 
     static defaultProps = {
@@ -80,7 +82,7 @@ class AddMusician extends Component {
         )
 
         return (
-            <div>
+            <div className='add-musician'>
                 <div>
                     <h1>Info</h1>
                     <span>Name: </span><input type='input'/>

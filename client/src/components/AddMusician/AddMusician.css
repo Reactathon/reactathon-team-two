@@ -1,0 +1,7 @@
+.add-musician tr {
+    text-align: left;
+}
+
+.add-musician select {
+    float: right;
+}
