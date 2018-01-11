@@ -1,24 +1,30 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
+
+import './AddMusician.css'
 
 class AddMusician extends Component {
+
+    static defaultProps = {
+        songs: [
+            {
+                name: 'Day Tripper',
+                band: 'The Beatles',
+                link: 'https://www.youtube.com/watch?v=yyPCKgzoiVk',
+                instruments: ['Vocals', 'Lead Guitar', 'Bass', 'Backup Vocals', 'Drums', 'Guitar', 'Tambourine']
+            },
+            {
+                name: 'The Weight',
+                band: 'The Band',
+                link: 'https://www.youtube.com/watch?v=FFqb1I-hiHE',
+                instruments: ['Vocals', 'Electric Guitar', 'Bass', 'Drums', 'Acoustic Guitar', 'Piano']
+            }
+        ]
+    }
 
     constructor(props) {
         super(props)
         this.state = {
-            songs: [
-                {
-                    name: 'Day Tripper',
-                    band: 'The Beatles',
-                    link: 'https://www.youtube.com/watch?v=yyPCKgzoiVk',
-                    instruments: ['Vocals', 'Lead Guitar', 'Bass', 'Backup Vocals', 'Drums', 'Guitar', 'Tambourine']
-                },
-                {
-                    name: 'The Weight',
-                    band: 'The Band',
-                    link: 'https://www.youtube.com/watch?v=FFqb1I-hiHE',
-                    instruments: ['Vocals', 'Electric Guitar', 'Bass', 'Drums', 'Acoustic Guitar', 'Piano']
-                }
-            ],
             musician: {
                 songs: []
             }
@@ -26,7 +32,8 @@ class AddMusician extends Component {
     }
 
     handleSongRankChange(index, event) {
-        const {songs, musician} = this.state
+        const {musician} = this.state
+        const {songs} = this.props
         const song = songs[index]
         musician.songs = musician.songs.filter((musicianSong) =>
             musicianSong.name !== song.name && musicianSong.band !== song.band
@@ -39,7 +46,7 @@ class AddMusician extends Component {
     }
 
     render() {
-        const {songs} = this.state
+        const {songs} = this.props
         const songRankOptions = songs.map((song, index) =>
             <option key={index}>{index+1}</option>
         )
@@ -75,7 +82,11 @@ class AddMusician extends Component {
         )
 
         return (
-            <div>
+            <div className='add-musician'>
+                <div>
+                    <h1>Info</h1>
+                    <span>Name: </span><input type='input'/>
+                </div>
                 <div>
                     <h1>Schedule</h1>
                     <span>Set your availability for the practices</span>
@@ -107,4 +118,10 @@ class AddMusician extends Component {
     }
 }
 
-export default AddMusician
+const mapStateToProps = state => {
+    return {
+        songs: state.songs
+    }
+}
+
+export default connect(mapStateToProps)(AddMusician)
