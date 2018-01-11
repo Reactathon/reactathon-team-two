@@ -57,7 +57,7 @@ class AddMusician extends Component {
                 )
                 const instrumentList = instruments.map((instrument, index) =>
                     <li key={index}>
-                        {instrument}:
+                        {instrument.type}:
                         <select>
                             <option/>
                             {instrumentRankOptions}
